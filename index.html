@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -22,66 +21,62 @@
         .page.active { display: block; }
         .tab-active { border-bottom: 3px solid #7c3aed; color: #7c3aed !important; font-weight: 800; }
 
-```
-    /* Toggle switch */
-    .toggle-switch { position: relative; display: inline-block; width: 48px; height: 26px; }
-    .toggle-switch input { opacity: 0; width: 0; height: 0; }
-    .toggle-slider { position: absolute; cursor: pointer; inset: 0; background: #e5e7eb; border-radius: 26px; transition: .3s; }
-    .toggle-slider:before { content: ""; position: absolute; height: 20px; width: 20px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: .3s; }
-    input:checked + .toggle-slider { background: #7c3aed; }
-    input:checked + .toggle-slider:before { transform: translateX(22px); }
+        /* Toggle switch */
+        .toggle-switch { position: relative; display: inline-block; width: 48px; height: 26px; }
+        .toggle-switch input { opacity: 0; width: 0; height: 0; }
+        .toggle-slider { position: absolute; cursor: pointer; inset: 0; background: #e5e7eb; border-radius: 26px; transition: .3s; }
+        .toggle-slider:before { content: ""; position: absolute; height: 20px; width: 20px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: .3s; }
+        input:checked + .toggle-slider { background: #7c3aed; }
+        input:checked + .toggle-slider:before { transform: translateX(22px); }
 
-    /* Animations */
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-    @keyframes confetti-fall { 0%{transform:translateY(-20px) rotate(0);opacity:1} 100%{transform:translateY(100vh) rotate(720deg);opacity:0} }
-    @keyframes pulse-glow { 0%,100%{box-shadow:0 0 20px rgba(168,85,247,.4)} 50%{box-shadow:0 0 40px rgba(168,85,247,.8)} }
-    @keyframes spin-slow { from{transform:rotate(0)} to{transform:rotate(360deg)} }
-    @keyframes wiggle { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
-    @keyframes star-twinkle { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.7)} }
+        /* Animations */
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+        @keyframes confetti-fall { 0%{transform:translateY(-20px) rotate(0);opacity:1} 100%{transform:translateY(100vh) rotate(720deg);opacity:0} }
+        @keyframes pulse-glow { 0%,100%{box-shadow:0 0 20px rgba(168,85,247,.4)} 50%{box-shadow:0 0 40px rgba(168,85,247,.8)} }
+        @keyframes spin-slow { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+        @keyframes wiggle { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
+        @keyframes star-twinkle { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.7)} }
 
-    .jeux-bg { background: linear-gradient(135deg,#fdf4ff,#fce7f3,#ede9fe); position:relative; overflow:hidden; }
-    .jeux-hero-btn { animation: pulse-glow 2s ease-in-out infinite; }
-    .star { position:absolute; animation:star-twinkle 2s ease-in-out infinite; }
+        .jeux-bg { background: linear-gradient(135deg,#fdf4ff,#fce7f3,#ede9fe); position:relative; overflow:hidden; }
+        .jeux-hero-btn { animation: pulse-glow 2s ease-in-out infinite; }
+        .star { position:absolute; animation:star-twinkle 2s ease-in-out infinite; }
 
-    /* Dark mode */
-    .dark body { background: #0f0f0f !important; color: #f1f1f1; }
-    .dark .bg-white { background: #1e1e2e !important; }
-    .dark .bg-gray-50 { background: #1a1a2e !important; }
-    .dark .bg-gray-100 { background: #252540 !important; }
-    .dark .text-gray-800 { color: #e2e8f0 !important; }
-    .dark .text-gray-700 { color: #cbd5e0 !important; }
-    .dark .text-gray-600 { color: #a0aec0 !important; }
-    .dark .text-gray-500 { color: #718096 !important; }
-    .dark .border-gray-200 { border-color: #2d3748 !important; }
-    .dark nav { background: #1e1e2e !important; border-color: #2d3748 !important; }
-    .dark input, .dark select, .dark textarea { background: #252540 !important; color: #e2e8f0 !important; border-color: #2d3748 !important; }
+        /* Dark mode */
+        .dark body { background: #0f0f0f !important; color: #f1f1f1; }
+        .dark .bg-white { background: #1e1e2e !important; }
+        .dark .bg-gray-50 { background: #1a1a2e !important; }
+        .dark .bg-gray-100 { background: #252540 !important; }
+        .dark .text-gray-800 { color: #e2e8f0 !important; }
+        .dark .text-gray-700 { color: #cbd5e0 !important; }
+        .dark .text-gray-600 { color: #a0aec0 !important; }
+        .dark .text-gray-500 { color: #718096 !important; }
+        .dark .border-gray-200 { border-color: #2d3748 !important; }
+        .dark nav { background: #1e1e2e !important; border-color: #2d3748 !important; }
+        .dark input, .dark select, .dark textarea { background: #252540 !important; color: #e2e8f0 !important; border-color: #2d3748 !important; }
 
-    /* Safe area */
-    .safe-bottom { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
-    nav { padding-bottom: env(safe-area-inset-bottom, 0px); }
-</style>
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "9fbc74d5-353f-4c10-b9aa-ccf540b18ad4",
-    });
-  });
-</script>
-<!-- PWA / App icon -->
-<link rel="apple-touch-icon" href="https://i.postimg.cc/HxmRfRCx/IMG-0992.jpg">
-<link rel="icon" type="image/jpeg" sizes="192x192" href="https://i.postimg.cc/HxmRfRCx/IMG-0992.jpg">
-<meta name="application-name" content="Brasserie Vaires APP">
-<meta name="apple-mobile-web-app-title" content="Brasserie Vaires APP">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-```
-
+        /* Safe area */
+        .safe-bottom { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+        nav { padding-bottom: env(safe-area-inset-bottom, 0px); }
+    </style>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "9fbc74d5-353f-4c10-b9aa-ccf540b18ad4",
+        });
+      });
+    </script>
+    <!-- PWA / App icon -->
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/HxmRfRCx/IMG-0992.jpg">
+    <link rel="icon" type="image/jpeg" sizes="192x192" href="https://i.postimg.cc/HxmRfRCx/IMG-0992.jpg">
+    <meta name="application-name" content="Brasserie Vaires APP">
+    <meta name="apple-mobile-web-app-title" content="Brasserie Vaires APP">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body class="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50">
 
 <!-- MODALES -->
-
 <div id="adminPrompt" class="hidden fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl">
         <h3 class="text-xl font-bold text-gray-800 mb-4">🔐 Connexion Admin</h3>
@@ -160,7 +155,6 @@
 </div>
 
 <!-- Modale anniversaire -->
-
 <div id="anniv-modal" class="hidden fixed inset-0 bg-black/60 z-[200] flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl w-full max-w-sm shadow-2xl overflow-hidden text-center">
         <div class="p-6 pb-2">
@@ -169,17 +163,13 @@
             <p class="text-gray-500 text-sm" id="anniv-subtitle">On vous souhaite une belle journée 🎉</p>
         </div>
 
-```
-    <button onclick="closeAnnivModal()" class="w-full px-6 pb-5 block">
-        <span class="block w-full bg-gray-100 text-gray-600 py-3 rounded-2xl font-bold text-sm">Merci ! 🎊</span>
-    </button>
-</div>
-```
-
+        <button onclick="closeAnnivModal()" class="w-full px-6 pb-5 block">
+            <span class="block w-full bg-gray-100 text-gray-600 py-3 rounded-2xl font-bold text-sm">Merci ! 🎊</span>
+        </button>
+    </div>
 </div>
 
 <!-- 🤖 Chatbot IA flottant -->
-
 <button onclick="openChatbot()" id="chatbot-btn" class="fixed bottom-24 right-4 z-40 w-14 h-14 rounded-full shadow-xl flex items-center justify-center text-2xl" style="background:linear-gradient(135deg,#7c3aed,#ec4899)">
     🤖
 </button>
@@ -220,7 +210,6 @@
 </div>
 
 <!-- Modale tuto installation -->
-
 <div id="install-tuto" class="hidden fixed inset-0 bg-black/70 z-[200] flex items-end justify-center p-4">
     <div class="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden">
         <div class="bg-gradient-to-r from-purple-600 to-pink-600 p-5 text-white text-center">
@@ -278,7 +267,6 @@
 </div>
 
 <!-- Bannière cookies -->
-
 <div id="cookie-banner" class="hidden fixed bottom-0 left-0 right-0 z-[150] p-4">
     <div class="max-w-md mx-auto bg-gray-900 text-white rounded-2xl p-5 shadow-2xl">
         <div class="flex items-start gap-3 mb-4">
@@ -296,7 +284,6 @@
 </div>
 
 <!-- TOAST -->
-
 <div id="toast-notif" class="hidden fixed bottom-24 left-1/2 -translate-x-1/2 z-[90] max-w-xs w-full px-4">
     <div class="bg-gray-900 text-white rounded-2xl px-4 py-3 shadow-xl flex items-center gap-3">
         <span id="toast-emoji" class="text-2xl">🔔</span>
@@ -305,7 +292,6 @@
 </div>
 
 <!-- HEADER -->
-
 <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-5 shadow-lg">
     <div class="flex justify-between items-center max-w-md mx-auto">
         <div style="width:36px"></div>
@@ -321,7 +307,6 @@
 </div>
 
 <!-- BANDEAU ANNONCE -->
-
 <div id="annonce-bandeau" class="hidden max-w-md mx-auto px-4 pt-3">
     <div id="annonce-box" class="rounded-2xl px-4 py-3 flex items-center gap-3 shadow-md">
         <span id="annonce-emoji" class="text-2xl flex-shrink-0">📢</span>
@@ -331,11 +316,9 @@
 </div>
 
 <!-- CONTENU PRINCIPAL -->
-
 <div id="app" class="max-w-md mx-auto p-4 safe-bottom">
 
 <!-- PAGE ADMIN -->
-
 <div id="page-admin" class="page space-y-4">
     <h2 class="text-2xl font-black text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">⚙️ Administration</h2>
     <div class="bg-white rounded-2xl p-4 shadow-md space-y-3">
@@ -411,50 +394,46 @@
         <p class="text-xs text-gray-400 text-center" id="theme-save-msg"></p>
     </div>
 
-```
-<div class="bg-white rounded-2xl p-5 shadow-md space-y-4">
-    <h3 class="font-bold text-gray-800">🎨 Couleurs du site</h3>
-    <div class="grid grid-cols-2 gap-3">
-        <div>
-            <label class="text-xs font-bold text-gray-500 mb-1 block">Couleur principale</label>
-            <div class="flex items-center gap-2">
-                <input type="color" id="color-primary" value="#7c3aed" class="w-10 h-10 rounded-lg border-0 cursor-pointer">
-                <span class="text-xs text-gray-500">Violet</span>
+    <div class="bg-white rounded-2xl p-5 shadow-md space-y-4">
+        <h3 class="font-bold text-gray-800">🎨 Couleurs du site</h3>
+        <div class="grid grid-cols-2 gap-3">
+            <div>
+                <label class="text-xs font-bold text-gray-500 mb-1 block">Couleur principale</label>
+                <div class="flex items-center gap-2">
+                    <input type="color" id="color-primary" value="#7c3aed" class="w-10 h-10 rounded-lg border-0 cursor-pointer">
+                    <span class="text-xs text-gray-500">Violet</span>
+                </div>
+            </div>
+            <div>
+                <label class="text-xs font-bold text-gray-500 mb-1 block">Couleur secondaire</label>
+                <div class="flex items-center gap-2">
+                    <input type="color" id="color-secondary" value="#ec4899" class="w-10 h-10 rounded-lg border-0 cursor-pointer">
+                    <span class="text-xs text-gray-500">Rose</span>
+                </div>
             </div>
         </div>
+        <div class="flex gap-2">
+            <button onclick="saveColors()" class="flex-1 bg-purple-600 text-white py-2.5 rounded-xl font-bold text-sm">✅ Appliquer</button>
+            <button onclick="resetColors()" class="flex-1 bg-gray-100 text-gray-600 py-2.5 rounded-xl font-bold text-sm">↩️ Réinitialiser</button>
+        </div>
+        <!-- Presets -->
         <div>
-            <label class="text-xs font-bold text-gray-500 mb-1 block">Couleur secondaire</label>
-            <div class="flex items-center gap-2">
-                <input type="color" id="color-secondary" value="#ec4899" class="w-10 h-10 rounded-lg border-0 cursor-pointer">
-                <span class="text-xs text-gray-500">Rose</span>
+            <p class="text-xs font-bold text-gray-500 mb-2">Thèmes rapides</p>
+            <div class="flex gap-2 flex-wrap">
+                <button onclick="applyPreset('#7c3aed','#ec4899')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#7c3aed,#ec4899)"></button>
+                <button onclick="applyPreset('#059669','#10b981')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#059669,#10b981)"></button>
+                <button onclick="applyPreset('#dc2626','#f97316')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#dc2626,#f97316)"></button>
+                <button onclick="applyPreset('#1d4ed8','#06b6d4')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#1d4ed8,#06b6d4)"></button>
+                <button onclick="applyPreset('#92400e','#b45309')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#92400e,#b45309)"></button>
+                <button onclick="applyPreset('#1f2937','#374151')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#1f2937,#374151)"></button>
             </div>
         </div>
     </div>
-    <div class="flex gap-2">
-        <button onclick="saveColors()" class="flex-1 bg-purple-600 text-white py-2.5 rounded-xl font-bold text-sm">✅ Appliquer</button>
-        <button onclick="resetColors()" class="flex-1 bg-gray-100 text-gray-600 py-2.5 rounded-xl font-bold text-sm">↩️ Réinitialiser</button>
-    </div>
-    <!-- Presets -->
-    <div>
-        <p class="text-xs font-bold text-gray-500 mb-2">Thèmes rapides</p>
-        <div class="flex gap-2 flex-wrap">
-            <button onclick="applyPreset('#7c3aed','#ec4899')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#7c3aed,#ec4899)"></button>
-            <button onclick="applyPreset('#059669','#10b981')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#059669,#10b981)"></button>
-            <button onclick="applyPreset('#dc2626','#f97316')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#dc2626,#f97316)"></button>
-            <button onclick="applyPreset('#1d4ed8','#06b6d4')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#1d4ed8,#06b6d4)"></button>
-            <button onclick="applyPreset('#92400e','#b45309')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#92400e,#b45309)"></button>
-            <button onclick="applyPreset('#1f2937','#374151')" class="w-8 h-8 rounded-full shadow" style="background:linear-gradient(135deg,#1f2937,#374151)"></button>
-        </div>
-    </div>
-</div>
 
-<button onclick="logoutAdmin()" class="w-full bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold">🚪 Se déconnecter</button>
-```
-
+    <button onclick="logoutAdmin()" class="w-full bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold">🚪 Se déconnecter</button>
 </div>
 
 <!-- PAGE ACCUEIL -->
-
 <div id="page-home" class="page space-y-4">
     <div class="relative h-56 bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl shadow-lg flex items-end justify-center overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-t from-purple-900/70 via-transparent to-transparent"></div>
@@ -522,25 +501,21 @@
         <p class="text-xs text-gray-400 mt-2 text-center" id="anniv-saved-msg"></p>
     </div>
 
-```
-<button onclick="showInstallTuto()" id="install-btn" class="hidden w-full rounded-2xl p-4 shadow-md text-white font-bold text-sm" style="background:linear-gradient(135deg,#667eea,#764ba2)">
-    📲 Installer l'app sur mon téléphone
-</button>
+    <button onclick="showInstallTuto()" id="install-btn" class="hidden w-full rounded-2xl p-4 shadow-md text-white font-bold text-sm" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+        📲 Installer l'app sur mon téléphone
+    </button>
 
-<div class="rounded-2xl p-4 shadow-md text-center" style="background:linear-gradient(135deg,#667eea,#764ba2)">
-    <p class="text-white font-bold text-sm mb-3">📣 Partage la Brasserie !</p>
-    <div class="flex gap-2 justify-center">
-        <button onclick="shareApp()" class="bg-white/20 text-white px-4 py-2 rounded-xl text-xs font-bold">🔗 Copier le lien</button>
-        <button onclick="shareWhatsapp()" class="bg-white/20 text-white px-4 py-2 rounded-xl text-xs font-bold">💬 WhatsApp</button>
+    <div class="rounded-2xl p-4 shadow-md text-center" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+        <p class="text-white font-bold text-sm mb-3">📣 Partage la Brasserie !</p>
+        <div class="flex gap-2 justify-center">
+            <button onclick="shareApp()" class="bg-white/20 text-white px-4 py-2 rounded-xl text-xs font-bold">🔗 Copier le lien</button>
+            <button onclick="shareWhatsapp()" class="bg-white/20 text-white px-4 py-2 rounded-xl text-xs font-bold">💬 WhatsApp</button>
+        </div>
+        <p class="text-white/60 text-xs mt-2" id="share-msg"></p>
     </div>
-    <p class="text-white/60 text-xs mt-2" id="share-msg"></p>
-</div>
-```
-
 </div>
 
 <!-- PAGE MENU -->
-
 <div id="page-menu" class="page space-y-4">
     <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent" data-i18n="our_menu">Notre Carte</h2>
     <div class="bg-white rounded-2xl px-4 py-3 shadow-md flex items-center gap-3">
@@ -577,7 +552,6 @@
 </div>
 
 <!-- PAGE GALERIE -->
-
 <div id="page-gallery" class="page space-y-6">
     <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">📸 Photos</h2>
     <div id="gallery-container" class="grid grid-cols-2 gap-3"></div>
@@ -588,7 +562,6 @@
 </div>
 
 <!-- PAGE AVIS -->
-
 <div id="page-reviews" class="page space-y-4">
     <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">⭐ Avis</h2>
     <div id="reviews-container" class="space-y-3"></div>
@@ -609,7 +582,6 @@
 </div>
 
 <!-- PAGE RÉSERVATION -->
-
 <div id="page-reservation" class="page space-y-4">
     <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent" data-i18n="reservation_title">Réserver une table</h2>
     <div class="bg-white rounded-2xl shadow-md overflow-hidden">
@@ -619,7 +591,6 @@
 </div>
 
 <!-- PAGE COMMANDER -->
-
 <div id="page-order" class="page space-y-4">
     <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent" data-i18n="order_title">📦 Click &amp; Collect</h2>
     <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-2xl p-5 shadow-lg">
@@ -636,252 +607,236 @@
         <p class="text-xs text-orange-700">Votre commande sera préparée pour l'heure choisie. Présentez-vous à la caisse en mentionnant votre prénom.</p>
     </div>
 
-```
-<!-- Affluence -->
-<div class="bg-white rounded-2xl p-5 shadow-md">
-    <div class="flex items-center justify-between mb-2">
-        <h3 class="font-bold text-gray-800 text-sm">🚦 Affluence estimée</h3>
-        <span class="text-xs font-bold px-2 py-1 rounded-full" id="rush-badge">...</span>
-    </div>
-    <div class="flex gap-1 mb-2" id="rush-bars">
-        <div class="flex-1 h-6 rounded-lg bg-gray-100"></div>
-        <div class="flex-1 h-6 rounded-lg bg-gray-100"></div>
-        <div class="flex-1 h-6 rounded-lg bg-gray-100"></div>
-        <div class="flex-1 h-6 rounded-lg bg-gray-100"></div>
-        <div class="flex-1 h-6 rounded-lg bg-gray-100"></div>
-    </div>
-    <p class="text-xs text-gray-400 text-center" id="rush-msg"></p>
-</div>
-
-<!-- Cuisine ferme -->
-<div id="cuisine-timer-box" class="hidden bg-red-50 border-2 border-red-400 rounded-2xl p-4 text-center">
-    <p class="font-black text-red-700 text-sm">🔥 La cuisine ferme dans</p>
-    <p class="text-3xl font-black text-red-600" id="cuisine-countdown"></p>
-    <p class="text-xs text-red-500">Dernière chance pour commander !</p>
-</div>
-
-<!-- Roue -->
-<div class="bg-white rounded-2xl p-5 shadow-md">
-    <h3 class="font-bold text-gray-800 text-sm mb-3">🎰 Pas d'idée ? La roue décide !</h3>
-    <div class="flex items-center gap-3">
-        <div id="roue-resultat" class="flex-1 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl p-3 text-center text-sm font-bold text-purple-700 min-h-[48px] flex items-center justify-center">Appuie sur la roue !</div>
-        <button onclick="tournerRoue()" id="roue-btn" class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-3xl shadow-lg flex items-center justify-center flex-shrink-0">🎰</button>
-    </div>
-    <button onclick="ajouterSuggestion()" id="roue-add-btn" class="hidden mt-2 w-full bg-purple-100 text-purple-700 py-2 rounded-xl text-xs font-bold">➕ Ajouter ce plat</button>
-</div>
-
-<!-- Tendances -->
-<div class="bg-white rounded-2xl p-5 shadow-md">
-    <h3 class="font-bold text-gray-800 text-sm mb-3">📈 Tendances cette semaine</h3>
-    <div id="trending-list" class="space-y-2"></div>
-</div>
-
-<!-- Plat mystère -->
-<div id="mystery-box" class="bg-gradient-to-br from-indigo-600 to-purple-700 text-white rounded-2xl p-5 shadow-lg">
-    <div class="flex items-center justify-between mb-3">
-        <div>
-            <p class="font-black text-lg">🎲 Plat mystère du jour</p>
-            <p class="text-xs opacity-80">Un plat choisi par le chef !</p>
+    <!-- Affluence -->
+    <div class="bg-white rounded-2xl p-5 shadow-md">
+        <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-gray-800 text-sm">🚦 Affluence estimée</h3>
+            <span class="text-xs font-bold px-2 py-1 rounded-full" id="rush-badge">...</span>
         </div>
-        <div class="text-4xl" id="mystery-emoji">❓</div>
-    </div>
-    <div id="mystery-reveal" class="hidden bg-white/20 rounded-xl p-3 mb-3 text-center">
-        <p class="font-black text-xl" id="mystery-nom"></p>
-        <p class="text-sm opacity-90" id="mystery-prix-display"></p>
-    </div>
-    <div class="flex gap-2">
-        <button onclick="revelerMystere()" id="mystery-btn" class="flex-1 bg-white text-purple-700 font-black py-2 rounded-xl text-sm">✨ Révéler</button>
-        <button onclick="ajouterMystere()" id="mystery-add" class="hidden flex-1 bg-yellow-400 text-purple-900 font-black py-2 rounded-xl text-sm">➕ Ajouter</button>
-    </div>
-</div>
-
-<!-- Humeur -->
-<div class="bg-white rounded-2xl p-5 shadow-md">
-    <h3 class="font-bold text-gray-800 text-sm mb-3">😋 T'as quelle faim ?</h3>
-    <div class="flex gap-2">
-        <button onclick="setHumeur('snack')" id="humeur-snack" class="flex-1 flex flex-col items-center gap-1 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-500 transition-all">
-            <span class="text-2xl">🍪</span><span class="text-xs font-bold">Snack</span>
-        </button>
-        <button onclick="setHumeur('normal')" id="humeur-normal" class="flex-1 flex flex-col items-center gap-1 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-500 transition-all">
-            <span class="text-2xl">🍽️</span><span class="text-xs font-bold">Normal</span>
-        </button>
-        <button onclick="setHumeur('faim')" id="humeur-faim" class="flex-1 flex flex-col items-center gap-1 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-500 transition-all">
-            <span class="text-2xl">🦁</span><span class="text-xs font-bold">Très faim</span>
-        </button>
-    </div>
-    <div id="humeur-suggestion" class="hidden mt-3 bg-orange-50 rounded-xl p-3 text-xs text-orange-700 font-semibold text-center"></div>
-</div>
-
-<!-- Humeur cuisine -->
-<div class="bg-white rounded-2xl p-5 shadow-md">
-    <div class="flex items-center justify-between mb-3">
-        <h3 class="font-bold text-gray-800 text-sm">👨‍🍳 Humeur de la cuisine</h3>
-        <span class="text-2xl" id="cuisine-humeur-emoji">😊</span>
-    </div>
-    <div class="w-full bg-gray-100 rounded-full h-3 overflow-hidden">
-        <div id="cuisine-humeur-bar" class="h-3 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 transition-all duration-1000" style="width:75%"></div>
-    </div>
-    <p class="text-xs text-gray-500 text-center mt-2" id="cuisine-humeur-txt">En forme et motivée ! 💪</p>
-</div>
-
-<!-- Sélection plats -->
-<div class="bg-white rounded-2xl p-5 shadow-md space-y-4">
-    <h3 class="font-bold text-gray-800">🛒 Votre commande</h3>
-    <div class="flex gap-2 bg-gray-50 rounded-xl p-1">
-        <button onclick="switchOrderTab('semaine')" id="order-tab-semaine" class="flex-1 py-2 rounded-lg text-xs font-bold tab-active">📋 Semaine</button>
-        <button onclick="switchOrderTab('samedi')" id="order-tab-samedi" class="flex-1 py-2 rounded-lg text-xs font-bold text-gray-500">⭐ Samedi</button>
-    </div>
-    <div id="order-plats-list" class="space-y-2 max-h-80 overflow-y-auto"></div>
-</div>
-
-<!-- Infos -->
-<div class="bg-white rounded-2xl p-5 shadow-md space-y-3">
-    <input type="text" id="order-prenom" placeholder="Votre prénom" class="w-full p-3 border border-gray-200 rounded-xl text-sm">
-    <input type="tel" id="order-tel" placeholder="06 XX XX XX XX" class="w-full p-3 border border-gray-200 rounded-xl text-sm">
-    <select id="order-heure" class="w-full p-3 border border-gray-200 rounded-xl text-sm bg-white">
-        <option value="">Heure de retrait</option>
-        <option>12h00</option><option>12h15</option><option>12h30</option><option>12h45</option>
-        <option>13h00</option><option>13h15</option><option>13h30</option><option>13h45</option>
-        <option>14h00</option>
-    </select>
-</div>
-
-<!-- Ami -->
-<div class="bg-white rounded-2xl p-5 shadow-md">
-    <div class="flex items-center justify-between">
-        <div><h3 class="font-bold text-gray-800 text-sm">👫 Commander pour un ami ?</h3><p class="text-xs text-gray-400">Ajoute une 2ème commande</p></div>
-        <button onclick="toggleAmiSection()" id="ami-toggle-btn" class="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-xl text-xs font-bold">+ Ajouter</button>
-    </div>
-    <div id="ami-section" class="hidden mt-3 space-y-2">
-        <input type="text" id="ami-prenom" placeholder="Prénom de l'ami" class="w-full p-3 border border-gray-200 rounded-xl text-sm">
-        <div id="ami-plats-list" class="space-y-2 max-h-48 overflow-y-auto"></div>
-        <p class="text-xs text-purple-600 font-bold text-center" id="ami-total-display"></p>
-    </div>
-</div>
-
-<!-- Partager addition -->
-<div class="bg-white rounded-2xl p-5 shadow-md">
-    <h3 class="font-bold text-gray-800 text-sm mb-1">💸 Partager l'addition</h3>
-    <p class="text-xs text-gray-400 mb-3">Combien de personnes ?</p>
-    <div class="flex items-center gap-3 mb-3">
-        <button onclick="changeSplit(-1)" class="w-10 h-10 rounded-full bg-gray-100 font-black text-xl flex items-center justify-center">−</button>
-        <div class="flex-1 text-center">
-            <p class="text-3xl font-black text-purple-700" id="split-nb">2</p>
-            <p class="text-xs text-gray-400">personnes</p>
+        <div class="flex gap-1 mb-2" id="rush-bars">
+            <div class="flex-1 h-6 rounded-lg bg-gray-100"></div>
+            <div class="flex-1 h-6 rounded-lg bg-gray-100"></div>
+            <div class="flex-1 h-6 rounded-lg bg-gray-100"></div>
+            <div class="flex-1 h-6 rounded-lg bg-gray-100"></div>
+            <div class="flex-1 h-6 rounded-lg bg-gray-100"></div>
         </div>
-        <button onclick="changeSplit(1)" class="w-10 h-10 rounded-full bg-gray-100 font-black text-xl flex items-center justify-center">+</button>
+        <p class="text-xs text-gray-400 text-center" id="rush-msg"></p>
     </div>
-    <div id="split-result" class="hidden bg-purple-50 rounded-xl p-3 text-center">
-        <p class="text-xs text-gray-500 mb-1">Chacun paie environ</p>
-        <p class="text-2xl font-black text-purple-700" id="split-amount">0€</p>
-    </div>
-</div>
 
-<!-- Temps de préparation -->
-<div class="rounded-2xl p-5 shadow-lg text-white" style="background:linear-gradient(135deg,#f093fb,#f5576c)">
-    <div class="flex items-center justify-between">
-        <div>
-            <h3 class="font-black text-sm">⏱️ Temps de préparation</h3>
-            <p class="text-xs opacity-80 mt-1" id="prep-time-desc">Sélectionne des plats</p>
+    <!-- Cuisine ferme -->
+    <div id="cuisine-timer-box" class="hidden bg-red-50 border-2 border-red-400 rounded-2xl p-4 text-center">
+        <p class="font-black text-red-700 text-sm">🔥 La cuisine ferme dans</p>
+        <p class="text-3xl font-black text-red-600" id="cuisine-countdown"></p>
+        <p class="text-xs text-red-500">Dernière chance pour commander !</p>
+    </div>
+
+    <!-- Roue -->
+    <div class="bg-white rounded-2xl p-5 shadow-md">
+        <h3 class="font-bold text-gray-800 text-sm mb-3">🎰 Pas d'idée ? La roue décide !</h3>
+        <div class="flex items-center gap-3">
+            <div id="roue-resultat" class="flex-1 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl p-3 text-center text-sm font-bold text-purple-700 min-h-[48px] flex items-center justify-center">Appuie sur la roue !</div>
+            <button onclick="tournerRoue()" id="roue-btn" class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-3xl shadow-lg flex items-center justify-center flex-shrink-0">🎰</button>
         </div>
-        <div class="text-center bg-white/20 rounded-2xl px-4 py-2">
-            <p class="text-3xl font-black" id="prep-time-val">—</p>
-            <p class="text-xs opacity-80">min</p>
-        </div>
+        <button onclick="ajouterSuggestion()" id="roue-add-btn" class="hidden mt-2 w-full bg-purple-100 text-purple-700 py-2 rounded-xl text-xs font-bold">➕ Ajouter ce plat</button>
     </div>
-</div>
 
-<!-- Note + allergies -->
-<div class="bg-white rounded-2xl p-5 shadow-md">
-    <label class="text-xs font-bold text-gray-500 mb-2 block" data-i18n="note_label">💬 Note / Allergies</label>
-    <textarea id="order-note" placeholder="Ex : sans oignons, allergie aux noix..." class="w-full p-3 border border-gray-200 rounded-xl text-sm h-20 resize-none"></textarea>
-</div>
-<div class="bg-white rounded-2xl p-5 shadow-md">
-    <h3 class="font-bold text-gray-800 text-sm mb-3">⚠️ Allergies rapides</h3>
-    <div class="flex flex-wrap gap-2" id="allergie-tags">
-        <button onclick="toggleAllergie(this,'🥜 Arachides')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🥜 Arachides</button>
-        <button onclick="toggleAllergie(this,'🥛 Lactose')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🥛 Lactose</button>
-        <button onclick="toggleAllergie(this,'🌾 Gluten')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🌾 Gluten</button>
-        <button onclick="toggleAllergie(this,'🥚 Œufs')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🥚 Œufs</button>
-        <button onclick="toggleAllergie(this,'🐟 Poisson')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🐟 Poisson</button>
-        <button onclick="toggleAllergie(this,'🦐 Crustacés')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🦐 Crustacés</button>
-        <button onclick="toggleAllergie(this,'🌰 Fruits à coque')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🌰 Fruits à coque</button>
+    <!-- Tendances -->
+    <div class="bg-white rounded-2xl p-5 shadow-md">
+        <h3 class="font-bold text-gray-800 text-sm mb-3">📈 Tendances cette semaine</h3>
+        <div id="trending-list" class="space-y-2"></div>
     </div>
-    <div id="allergie-note" class="hidden mt-3 bg-red-50 border border-red-200 rounded-xl p-3">
-        <p class="text-xs font-bold text-red-700">⚠️ Allergies notées :</p>
-        <p class="text-xs text-red-600 mt-1" id="allergie-list"></p>
-    </div>
-</div>
 
-<!-- Récap -->
-<div id="order-recap-box" class="hidden bg-white rounded-2xl p-5 shadow-md">
-    <h3 class="font-bold text-gray-800 mb-3">🧾 Récapitulatif</h3>
-    <div id="order-recap-list" class="space-y-1 text-sm mb-3"></div>
-    <div class="border-t border-gray-100 pt-3 flex justify-between font-black text-lg">
-        <span>Total estimé</span>
-        <span class="text-purple-600" id="order-total">0 €</span>
-    </div>
-</div>
-
-<!-- QR Code -->
-<div id="qr-box" class="hidden bg-white rounded-2xl p-5 shadow-md">
-    <h3 class="font-bold text-gray-800 text-sm mb-1 text-center">📱 QR Code de ta commande</h3>
-    <p class="text-xs text-gray-400 text-center mb-4">Montre-le à la caisse</p>
-    <div class="flex justify-center mb-4"><div id="qr-canvas" class="rounded-xl shadow-md flex justify-center"></div></div>
-    <p class="text-xs text-purple-600 font-bold text-center" id="qr-info"></p>
-</div>
-
-<!-- 🎤 Commande vocale -->
-<div class="bg-white rounded-2xl p-5 shadow-md">
-    <div class="flex items-center justify-between mb-3">
-        <div>
-            <h3 class="font-bold text-gray-800 text-sm">🎤 Commander à la voix</h3>
-            <p class="text-xs text-gray-400">Ex: "Ajoute un BG et une César"</p>
-        </div>
-        <button onclick="toggleVoiceOrder()" id="voice-order-btn" class="w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg transition-all" style="background:linear-gradient(135deg,#ef4444,#ec4899)">🎤</button>
-    </div>
-    <div id="voice-order-status" class="text-xs text-gray-400 text-center">Appuie pour parler</div>
-    <div id="voice-order-result" class="hidden mt-2 bg-purple-50 rounded-xl p-3 text-sm text-purple-700 font-semibold text-center"></div>
-</div>
-
-<button id="order-validate-btn" onclick="validerCommande()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-2xl font-black text-lg shadow-xl" data-i18n="order_validate">✅ Valider ma commande</button>
-
-<!-- Confirmation -->
-<div id="order-confirmation" class="hidden bg-white rounded-2xl p-6 shadow-md">
-    <div class="text-center mb-4">
-        <p class="text-5xl mb-3">🎉</p>
-        <h3 class="text-xl font-black text-gray-800">Commande envoyée !</h3>
-        <p class="text-sm text-gray-500 mt-1" id="order-confirm-text"></p>
-    </div>
-    <div id="order-status-tracker" class="hidden mb-4">
-        <div class="flex justify-between mb-2">
-            <div class="flex flex-col items-center gap-1 flex-1">
-                <div id="status-dot-received" class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white text-sm">📥</div>
-                <span class="text-xs text-gray-500">Reçue</span>
+    <!-- Plat mystère -->
+    <div id="mystery-box" class="bg-gradient-to-br from-indigo-600 to-purple-700 text-white rounded-2xl p-5 shadow-lg">
+        <div class="flex items-center justify-between mb-3">
+            <div>
+                <p class="font-black text-lg">🎲 Plat mystère du jour</p>
+                <p class="text-xs opacity-80">Un plat choisi par le chef !</p>
             </div>
-            <div class="flex-1 flex items-center"><div class="h-1 w-full bg-gray-200" id="status-line-1"></div></div>
-            <div class="flex flex-col items-center gap-1 flex-1">
-                <div id="status-dot-preparing" class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-sm">👨‍🍳</div>
-                <span class="text-xs text-gray-500">Préparation</span>
+            <div class="text-4xl" id="mystery-emoji">❓</div>
+        </div>
+        <div id="mystery-reveal" class="hidden bg-white/20 rounded-xl p-3 mb-3 text-center">
+            <p class="font-black text-xl" id="mystery-nom"></p>
+            <p class="text-sm opacity-90" id="mystery-prix-display"></p>
+        </div>
+        <div class="flex gap-2">
+            <button onclick="revelerMystere()" id="mystery-btn" class="flex-1 bg-white text-purple-700 font-black py-2 rounded-xl text-sm">✨ Révéler</button>
+            <button onclick="ajouterMystere()" id="mystery-add" class="hidden flex-1 bg-yellow-400 text-purple-900 font-black py-2 rounded-xl text-sm">➕ Ajouter</button>
+        </div>
+    </div>
+
+    <!-- Humeur -->
+    <div class="bg-white rounded-2xl p-5 shadow-md">
+        <h3 class="font-bold text-gray-800 text-sm mb-3">😋 T'as quelle faim ?</h3>
+        <div class="flex gap-2">
+            <button onclick="setHumeur('snack')" id="humeur-snack" class="flex-1 flex flex-col items-center gap-1 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-500 transition-all">
+                <span class="text-2xl">🍪</span><span class="text-xs font-bold">Snack</span>
+            </button>
+            <button onclick="setHumeur('normal')" id="humeur-normal" class="flex-1 flex flex-col items-center gap-1 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-500 transition-all">
+                <span class="text-2xl">🍽️</span><span class="text-xs font-bold">Normal</span>
+            </button>
+            <button onclick="setHumeur('faim')" id="humeur-faim" class="flex-1 flex flex-col items-center gap-1 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-500 transition-all">
+                <span class="text-2xl">🦁</span><span class="text-xs font-bold">Très faim</span>
+            </button>
+        </div>
+        <div id="humeur-suggestion" class="hidden mt-3 bg-orange-50 rounded-xl p-3 text-xs text-orange-700 font-semibold text-center"></div>
+    </div>
+
+    <!-- Humeur cuisine -->
+    <div class="bg-white rounded-2xl p-5 shadow-md">
+        <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-gray-800 text-sm">👨‍🍳 Humeur de la cuisine</h3>
+            <span class="text-2xl" id="cuisine-humeur-emoji">😊</span>
+        </div>
+        <div class="w-full bg-gray-100 rounded-full h-3 overflow-hidden">
+            <div id="cuisine-humeur-bar" class="h-3 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 transition-all duration-1000" style="width:75%"></div>
+        </div>
+        <p class="text-xs text-gray-500 text-center mt-2" id="cuisine-humeur-txt">En forme et motivée ! 💪</p>
+    </div>
+
+    <!-- Sélection plats -->
+    <div class="bg-white rounded-2xl p-5 shadow-md space-y-4">
+        <h3 class="font-bold text-gray-800">🛒 Votre commande</h3>
+        <div class="flex gap-2 bg-gray-50 rounded-xl p-1">
+            <button onclick="switchOrderTab('semaine')" id="order-tab-semaine" class="flex-1 py-2 rounded-lg text-xs font-bold tab-active">📋 Semaine</button>
+            <button onclick="switchOrderTab('samedi')" id="order-tab-samedi" class="flex-1 py-2 rounded-lg text-xs font-bold text-gray-500">⭐ Samedi</button>
+        </div>
+        <div id="order-plats-list" class="space-y-2 max-h-80 overflow-y-auto"></div>
+    </div>
+
+    <!-- Infos -->
+    <div class="bg-white rounded-2xl p-5 shadow-md space-y-3">
+        <input type="text" id="order-prenom" placeholder="Votre prénom" class="w-full p-3 border border-gray-200 rounded-xl text-sm">
+        <input type="tel" id="order-tel" placeholder="06 XX XX XX XX" class="w-full p-3 border border-gray-200 rounded-xl text-sm">
+        <select id="order-heure" class="w-full p-3 border border-gray-200 rounded-xl text-sm bg-white">
+            <option value="">Heure de retrait</option>
+            <option>12h00</option><option>12h15</option><option>12h30</option><option>12h45</option>
+            <option>13h00</option><option>13h15</option><option>13h30</option><option>13h45</option>
+            <option>14h00</option>
+        </select>
+    </div>
+
+    <!-- Ami -->
+    <div class="bg-white rounded-2xl p-5 shadow-md">
+        <div class="flex items-center justify-between">
+            <div><h3 class="font-bold text-gray-800 text-sm">👫 Commander pour un ami ?</h3><p class="text-xs text-gray-400">Ajoute une 2ème commande</p></div>
+            <button onclick="toggleAmiSection()" id="ami-toggle-btn" class="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-xl text-xs font-bold">+ Ajouter</button>
+        </div>
+        <div id="ami-section" class="hidden mt-3 space-y-2">
+            <input type="text" id="ami-prenom" placeholder="Prénom de l'ami" class="w-full p-3 border border-gray-200 rounded-xl text-sm">
+            <div id="ami-plats-list" class="space-y-2 max-h-48 overflow-y-auto"></div>
+            <p class="text-xs text-purple-600 font-bold text-center" id="ami-total-display"></p>
+        </div>
+    </div>
+
+    <!-- Partager addition -->
+    <div class="bg-white rounded-2xl p-5 shadow-md">
+        <h3 class="font-bold text-gray-800 text-sm mb-1">💸 Partager l'addition</h3>
+        <p class="text-xs text-gray-400 mb-3">Combien de personnes ?</p>
+        <div class="flex items-center gap-3 mb-3">
+            <button onclick="changeSplit(-1)" class="w-10 h-10 rounded-full bg-gray-100 font-black text-xl flex items-center justify-center">−</button>
+            <div class="flex-1 text-center">
+                <p class="text-3xl font-black text-purple-700" id="split-nb">2</p>
+                <p class="text-xs text-gray-400">personnes</p>
             </div>
-            <div class="flex-1 flex items-center"><div class="h-1 w-full bg-gray-200" id="status-line-2"></div></div>
-            <div class="flex flex-col items-center gap-1 flex-1">
-                <div id="status-dot-ready" class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-sm">✅</div>
-                <span class="text-xs text-gray-500">Prête</span>
+            <button onclick="changeSplit(1)" class="w-10 h-10 rounded-full bg-gray-100 font-black text-xl flex items-center justify-center">+</button>
+        </div>
+        <div id="split-result" class="hidden bg-purple-50 rounded-xl p-3 text-center">
+            <p class="text-xs text-gray-500 mb-1">Chacun paie environ</p>
+            <p class="text-2xl font-black text-purple-700" id="split-amount">0€</p>
+        </div>
+    </div>
+
+    <!-- Temps de préparation -->
+    <div class="rounded-2xl p-5 shadow-lg text-white" style="background:linear-gradient(135deg,#f093fb,#f5576c)">
+        <div class="flex items-center justify-between">
+            <div>
+                <h3 class="font-black text-sm">⏱️ Temps de préparation</h3>
+                <p class="text-xs opacity-80 mt-1" id="prep-time-desc">Sélectionne des plats</p>
+            </div>
+            <div class="text-center bg-white/20 rounded-2xl px-4 py-2">
+                <p class="text-3xl font-black" id="prep-time-val">—</p>
+                <p class="text-xs opacity-80">min</p>
             </div>
         </div>
     </div>
-    <div class="flex flex-col gap-3">
-        <button onclick="nouvelleCommande()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-xl font-bold" data-i18n="new_order">🔄 Nouvelle commande</button>
-        <button onclick="goToPage('home')" class="w-full bg-white border-2 border-purple-600 text-purple-600 py-3 rounded-xl font-semibold">🏠 Retour</button>
-    </div>
-</div>
-```
 
+    <!-- Note + allergies -->
+    <div class="bg-white rounded-2xl p-5 shadow-md">
+        <label class="text-xs font-bold text-gray-500 mb-2 block" data-i18n="note_label">💬 Note / Allergies</label>
+        <textarea id="order-note" placeholder="Ex : sans oignons, allergie aux noix..." class="w-full p-3 border border-gray-200 rounded-xl text-sm h-20 resize-none"></textarea>
+    </div>
+    <div class="bg-white rounded-2xl p-5 shadow-md">
+        <h3 class="font-bold text-gray-800 text-sm mb-3">⚠️ Allergies rapides</h3>
+        <div class="flex flex-wrap gap-2" id="allergie-tags">
+            <button onclick="toggleAllergie(this,'🥜 Arachides')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🥜 Arachides</button>
+            <button onclick="toggleAllergie(this,'🥛 Lactose')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🥛 Lactose</button>
+            <button onclick="toggleAllergie(this,'🌾 Gluten')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🌾 Gluten</button>
+            <button onclick="toggleAllergie(this,'🥚 Œufs')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🥚 Œufs</button>
+            <button onclick="toggleAllergie(this,'🐟 Poisson')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🐟 Poisson</button>
+            <button onclick="toggleAllergie(this,'🦐 Crustacés')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🦐 Crustacés</button>
+            <button onclick="toggleAllergie(this,'🌰 Fruits à coque')" class="allergie-tag py-1.5 px-3 rounded-full text-xs font-bold border-2 border-gray-200 text-gray-500">🌰 Fruits à coque</button>
+        </div>
+        <div id="allergie-note" class="hidden mt-3 bg-red-50 border border-red-200 rounded-xl p-3">
+            <p class="text-xs font-bold text-red-700">⚠️ Allergies notées :</p>
+            <p class="text-xs text-red-600 mt-1" id="allergie-list"></p>
+        </div>
+    </div>
+
+    <!-- Récap -->
+    <div id="order-recap-box" class="hidden bg-white rounded-2xl p-5 shadow-md">
+        <h3 class="font-bold text-gray-800 mb-3">🧾 Récapitulatif</h3>
+        <div id="order-recap-list" class="space-y-1 text-sm mb-3"></div>
+        <div class="border-t border-gray-100 pt-3 flex justify-between font-black text-lg">
+            <span>Total estimé</span>
+            <span class="text-purple-600" id="order-total">0 €</span>
+        </div>
+    </div>
+
+    <!-- QR Code -->
+    <div id="qr-box" class="hidden bg-white rounded-2xl p-5 shadow-md">
+        <h3 class="font-bold text-gray-800 text-sm mb-1 text-center">📱 QR Code de ta commande</h3>
+        <p class="text-xs text-gray-400 text-center mb-4">Montre-le à la caisse</p>
+        <div class="flex justify-center mb-4"><div id="qr-canvas" class="rounded-xl shadow-md flex justify-center"></div></div>
+        <p class="text-xs text-purple-600 font-bold text-center" id="qr-info"></p>
+    </div>
+    </div>
+
+    <button id="order-validate-btn" onclick="validerCommande()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-2xl font-black text-lg shadow-xl" data-i18n="order_validate">✅ Valider ma commande</button>
+
+    <!-- Confirmation -->
+    <div id="order-confirmation" class="hidden bg-white rounded-2xl p-6 shadow-md">
+        <div class="text-center mb-4">
+            <p class="text-5xl mb-3">🎉</p>
+            <h3 class="text-xl font-black text-gray-800">Commande envoyée !</h3>
+            <p class="text-sm text-gray-500 mt-1" id="order-confirm-text"></p>
+        </div>
+        <div id="order-status-tracker" class="hidden mb-4">
+            <div class="flex justify-between mb-2">
+                <div class="flex flex-col items-center gap-1 flex-1">
+                    <div id="status-dot-received" class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white text-sm">📥</div>
+                    <span class="text-xs text-gray-500">Reçue</span>
+                </div>
+                <div class="flex-1 flex items-center"><div class="h-1 w-full bg-gray-200" id="status-line-1"></div></div>
+                <div class="flex flex-col items-center gap-1 flex-1">
+                    <div id="status-dot-preparing" class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-sm">👨‍🍳</div>
+                    <span class="text-xs text-gray-500">Préparation</span>
+                </div>
+                <div class="flex-1 flex items-center"><div class="h-1 w-full bg-gray-200" id="status-line-2"></div></div>
+                <div class="flex flex-col items-center gap-1 flex-1">
+                    <div id="status-dot-ready" class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-sm">✅</div>
+                    <span class="text-xs text-gray-500">Prête</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-3">
+            <button onclick="nouvelleCommande()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-xl font-bold" data-i18n="new_order">🔄 Nouvelle commande</button>
+            <button onclick="goToPage('home')" class="w-full bg-white border-2 border-purple-600 text-purple-600 py-3 rounded-xl font-semibold">🏠 Retour</button>
+        </div>
+    </div>
 </div>
 
 <!-- PAGE CONTACT -->
-
 <div id="page-contact" class="page space-y-4">
     <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent" data-i18n="contact_title">Contact</h2>
     <div id="open-status-box" class="rounded-2xl p-4 shadow-md flex items-center gap-4">
@@ -938,7 +893,6 @@
 </div>
 
 <!-- PAGE JEUX -->
-
 <div id="page-jeux" class="page space-y-6">
     <div class="jeux-bg rounded-3xl p-8 text-center relative overflow-hidden shadow-xl" style="min-height:220px">
         <span class="star text-yellow-400 text-xl" style="top:12%;left:8%;animation-duration:2.1s">⭐</span>
@@ -958,7 +912,6 @@
 </div>
 
 <!-- PAGE ÉVÉNEMENTS -->
-
 <div id="page-events" class="page space-y-4">
     <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">🎉 Événements</h2>
     <div id="events-list" class="space-y-4"></div>
@@ -966,7 +919,6 @@
 </div>
 
 <!-- PAGE SONDAGE -->
-
 <div id="page-sondage" class="page space-y-4">
     <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">📊 Sondage</h2>
     <div id="sondage-list" class="space-y-4"></div>
@@ -974,7 +926,6 @@
 </div>
 
 <!-- PAGE GROUPE -->
-
 <div id="page-calcul" class="page space-y-4">
     <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">🥂 Calculateur Groupe</h2>
     <div class="bg-white rounded-2xl p-5 shadow-md space-y-4">
@@ -1014,7 +965,6 @@
 </div><!-- fin #app -->
 
 <!-- NAV BOTTOM -->
-
 <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50">
     <div class="max-w-md mx-auto flex justify-around py-2">
         <button onclick="goToPage('home')" id="nav-home" class="flex flex-col items-center gap-0.5 p-2 rounded-lg text-purple-600 bg-purple-50 min-w-0 flex-1">
@@ -2607,90 +2557,6 @@ async function sendChatMsg() {
     }
 }
 
-// ===== COMMANDE VOCALE =====
-let voiceRecognition = null;
-let voiceActive = false;
-
-function toggleVoiceOrder() {
-    if (voiceActive) {
-        stopVoiceOrder();
-    } else {
-        startVoiceOrder();
-    }
-}
-function startVoiceOrder() {
-    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-        showToast('❌','Non supporté','Essayez Chrome ou Edge');
-        return;
-    }
-    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-    voiceRecognition = new SR();
-    voiceRecognition.lang = 'fr-FR';
-    voiceRecognition.continuous = false;
-    voiceRecognition.interimResults = false;
-    voiceActive = true;
-    const btn = document.getElementById('voice-order-btn');
-    const status = document.getElementById('voice-order-status');
-    if (btn) btn.style.background = 'linear-gradient(135deg,#1d4ed8,#7c3aed)';
-    if (btn) btn.textContent = '⏹️';
-    if (status) status.textContent = '🔴 Écoute en cours...';
-    voiceRecognition.onresult = (e) => {
-        const transcript = e.results[0][0].transcript;
-        processVoiceCommand(transcript);
-    };
-    voiceRecognition.onerror = () => {
-        stopVoiceOrder();
-        showToast('❌','Erreur micro','Vérifiez les permissions');
-    };
-    voiceRecognition.onend = () => { if (voiceActive) stopVoiceOrder(); };
-    voiceRecognition.start();
-}
-function stopVoiceOrder() {
-    voiceActive = false;
-    if (voiceRecognition) voiceRecognition.stop();
-    const btn = document.getElementById('voice-order-btn');
-    const status = document.getElementById('voice-order-status');
-    if (btn) { btn.style.background = 'linear-gradient(135deg,#ef4444,#ec4899)'; btn.textContent = '🎤'; }
-    if (status) status.textContent = 'Appuie pour parler';
-}
-function processVoiceCommand(text) {
-    const status = document.getElementById('voice-order-status');
-    const result = document.getElementById('voice-order-result');
-    if (status) status.textContent = '"' + text + '"';
-    stopVoiceOrder();
-    const lc = text.toLowerCase();
-    const added = [];
-    const allPlats = [];
-    [...appState.menu.semaine, ...appState.menu.samedi].forEach(cat =>
-        cat.plats.forEach(p => { if (p.dispo) allPlats.push(p); })
-    );
-    // Chercher les plats mentionnés
-    allPlats.forEach(p => {
-        const nom = p.nom.toLowerCase();
-        const mots = nom.split(/\s+/);
-        const match = mots.some(m => m.length > 3 && lc.includes(m)) || lc.includes(nom);
-        if (match) {
-            // Chercher quantité
-            let qty = 1;
-            const numMatch = lc.match(/(\d+|un|une|deux|trois|quatre|cinq)/);
-            if (numMatch) {
-                const nums = {'un':1,'une':1,'deux':2,'trois':3,'quatre':4,'cinq':5};
-                qty = nums[numMatch[1]] || parseInt(numMatch[1]) || 1;
-            }
-            orderQuantites[p.id] = (orderQuantites[p.id] || 0) + qty;
-            added.push(qty + '× ' + p.nom);
-        }
-    });
-    if (added.length) {
-        renderOrderPlats();
-        if (result) { result.textContent = '✅ Ajouté : ' + added.join(', '); result.classList.remove('hidden'); }
-        showToast('✅', 'Commande vocale !', added.join(', ') + ' ajouté(s)');
-        setTimeout(() => { if(result) result.classList.add('hidden'); }, 4000);
-    } else {
-        if (result) { result.textContent = '❌ Plat non reconnu. Essayez "Ajoute un BG" ou "César"'; result.classList.remove('hidden'); }
-        setTimeout(() => { if(result) result.classList.add('hidden'); }, 3000);
-    }
-}
 
 
 // ===== ONESIGNAL PLAYER ID =====
@@ -2847,6 +2713,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000);
 });
 </script>
-
 </body>
 </html>
